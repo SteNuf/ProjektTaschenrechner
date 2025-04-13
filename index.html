@@ -5,30 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Taschenrechner</title>
+    <script>
+      let displayValue = "";
+
+      function appendToDisplay(value) {
+        displayValue += value;
+        document.getElementById("display").value = displayValue;
+      }
+
+      function clearDisplay() {
+        displayValue = "";
+        document.getElementById("display").value = displayValue;
+      }
+
+      function calculate() {
+        const result = eval(displayValue);
+        document.getElementById("display").value = result;
+        displayValue = String(result);
+      }
+    </script>
   </head>
 
   <body>
     <div class="calculator">
       <input type="text" id="display" disabled />
-      <button>C</button>
-      <button>*</button>
-      <button>/</button>
-      <button>-</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>+</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>=</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>.</button>
-      <button>0</button>
+      <div class="buttons">
+        <button onclick="clearDisplay()" class="content">C</button>
+        <button onclick="appendToDisplay(' * ')" class="content">*</button>
+        <button onclick="appendToDisplay(' / ')" class="content">/</button>
+        <button onclick="appendToDisplay(' - ')" class="content">-</button>
+        <button onclick="appendToDisplay(7)" class="content">7</button>
+        <button onclick="appendToDisplay(8)" class="content">8</button>
+        <button onclick="appendToDisplay(9)" class="content">9</button>
+        <button onclick="appendToDisplay(' + ')" class="content">+</button>
+        <button onclick="appendToDisplay(4)" class="content">4</button>
+        <button onclick="appendToDisplay(5)" class="content">5</button>
+        <button onclick="appendToDisplay('6')" class="content">6</button>
+        <button onclick="calculate()" class="content">=</button>
+        <button onclick="appendToDisplay(1)" class="content">1</button>
+        <button onclick="appendToDisplay(2)" class="content">2</button>
+        <button onclick="appendToDisplay(3)" class="content">3</button>
+        <button onclick="appendToDisplay('.')" class="content">,</button>
+        <button onclick="appendToDisplay(0)" class="content">0</button>
+      </div>
     </div>
-
-    <div class="display-calculator-long-right">Test</div>
   </body>
 </html>
