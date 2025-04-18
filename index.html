@@ -12,12 +12,15 @@
         displayValue += value;
         document.getElementById("display").value = displayValue;
         document.getElementById("display-two").value = displayValue;
+        document.getElementById("calcWayShow").value = displayValue;
       }
 
       function clearDisplay() {
         displayValue = "";
+
         document.getElementById("display").value = displayValue;
         document.getElementById("display-two").value = displayValue;
+        document.getElementById("calcWayShow").value = displayValue;
       }
 
       function calculate() {
@@ -25,6 +28,7 @@
         displayValue = String(result);
         document.getElementById("display").value = result;
         document.getElementById("display-two").value = displayValue;
+        document.getElementById("calcWayShow").value = displayValue;
       }
     </script>
   </head>
