@@ -7,28 +7,31 @@
     <title>Taschenrechner</title>
     <script>
       let displayValue = "";
+      let show = "";
 
       function appendToDisplay(value) {
         displayValue += value;
+        show;
         document.getElementById("display").value = displayValue;
         document.getElementById("display-two").value = displayValue;
-        document.getElementById("calcWayShow").value = displayValue;
+        document.getElementById("calcWayShow").innerHTML = displayValue;
       }
 
       function clearDisplay() {
         displayValue = "";
-
         document.getElementById("display").value = displayValue;
         document.getElementById("display-two").value = displayValue;
-        document.getElementById("calcWayShow").value = displayValue;
+        document.getElementById("calcWayShow").innerHTML = displayValue;
       }
 
       function calculate() {
         const result = eval(displayValue);
-        displayValue = String(result);
         document.getElementById("display").value = result;
-        document.getElementById("display-two").value = displayValue;
-        document.getElementById("calcWayShow").value = displayValue;
+        document.getElementById("calcWayShow").innerHTML = displayValue;
+        document.getElementById("clacWayShowResult").innerHTML = result;
+
+        /*
+        document.getElementById("display-two").value = displayValue;*/
       }
     </script>
   </head>
@@ -59,8 +62,9 @@
       </div>
 
       <div class="second-display">
-        <input type="text" id="display-two" disabled />
+        <!-- <input type="text" id="display-two" disabled />-->
         <div id="calcWayShow"></div>
+        <div id="clacWayShowResult"></div>
       </div>
     </section>
   </body>
